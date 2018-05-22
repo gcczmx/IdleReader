@@ -1,5 +1,6 @@
 package com.example.administrator.idlereader.Http;
 
+import com.example.administrator.idlereader.Bean.MoviesBean;
 import com.example.administrator.idlereader.Bean.NewsBean;
 
 import retrofit2.Call;
@@ -18,4 +19,7 @@ public interface RetrofitService {
     Call<NewsBean> getNews(@Path("type") String type,
                            @Path("id") String id,
                            @Path("startPage") int startPage);
+    @GET("/v2/movie/{total}")
+    Call<MoviesBean> getMovie(@Path("total") String total);
+
 }

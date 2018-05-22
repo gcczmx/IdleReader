@@ -1,5 +1,6 @@
 package com.example.administrator.idlereader.Http;
 
+import com.example.administrator.idlereader.Bean.MoviesBean;
 import com.example.administrator.idlereader.Bean.NewsBean;
 
 import java.util.concurrent.TimeUnit;
@@ -28,6 +29,9 @@ public class RetrofitHelper {
 
     public Call<NewsBean> getNews(String type, String id, int startPage) {
         return retrofitService.getNews(type, id, startPage);
+    }
+    public Call<MoviesBean> getMovies(String total) {
+        return retrofitService.getMovie(total);
     }
 
     public OkHttpClient getOkHttpClient() {

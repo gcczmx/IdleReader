@@ -28,6 +28,7 @@ public class FgMovieFragment extends Fragment implements IMoviesView {
         return inflater.inflate(R.layout.fg_movie, null);
     }
 
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

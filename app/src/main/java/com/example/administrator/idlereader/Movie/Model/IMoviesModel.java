@@ -5,5 +5,5 @@ package com.example.administrator.idlereader.Movie.Model;
  */
 
 public interface IMoviesModel {
-    void loadNews(String total, IOnLoadListener iOnLoadListener);
+    void loadMovies(String total, IOnLoadListener iOnLoadListener);
 }

@@ -6,6 +6,7 @@ import com.example.administrator.idlereader.Bean.NewsBean;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import rx.Observable;
 
 /**
  * Created by Administrator on 2018/5/19.
@@ -16,10 +17,13 @@ public interface RetrofitService {
     * http://c.m.163.com/nc/article/headline/T1348647909107/0-20.html
     * */
     @GET("nc/article/{type}/{id}/{startPage}-20.html")
-    Call<NewsBean> getNews(@Path("type") String type,
+    Observable<NewsBean> getNews(@Path("type") String type,
                            @Path("id") String id,
                            @Path("startPage") int startPage);
+    /*
+    * https://api.douban.com/v2/movie/in_theaters
+    * */
     @GET("/v2/movie/{total}")
-    Call<MoviesBean> getMovie(@Path("total") String total);
+    Observable<MoviesBean> getMovie(@Path("total") String total);
 
 }

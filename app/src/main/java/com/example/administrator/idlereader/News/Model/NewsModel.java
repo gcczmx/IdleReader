@@ -1,15 +1,10 @@
 package com.example.administrator.idlereader.News.Model;
 
-import android.util.Log;
-
 
 import com.example.administrator.idlereader.Bean.NewsBean;
 import com.example.administrator.idlereader.Http.Api;
 import com.example.administrator.idlereader.Http.RetrofitHelper;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -22,7 +17,7 @@ public class NewsModel implements INewsModel {
 
     @Override
     public void loadNews(final String hostType, final int startPage, final String id,
-                         final IOnLoadListener iOnLoadListener) {
+                         final INewsLoadListener iNewsLoadListener) {
         RetrofitHelper retrofitHelper= new RetrofitHelper(Api.NEWS_HOST);
         retrofitHelper.getNews(hostType,id,startPage)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -35,12 +30,12 @@ public class NewsModel implements INewsModel {
 
                     @Override
                     public void onError(Throwable e) {
-                        iOnLoadListener.fail(e.getMessage());
+                        iNewsLoadListener.fail(e);
                     }
 
                     @Override
                     public void onNext(NewsBean newsBean) {
-                        iOnLoadListener.success(newsBean);
+                        iNewsLoadListener.success(newsBean);
                     }
                 });
     }

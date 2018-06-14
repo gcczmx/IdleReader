@@ -1,14 +1,9 @@
 package com.example.administrator.idlereader.Movie.Model;
 
-import android.util.Log;
-
 import com.example.administrator.idlereader.Bean.MoviesBean;
 import com.example.administrator.idlereader.Http.Api;
 import com.example.administrator.idlereader.Http.RetrofitHelper;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -20,7 +15,7 @@ import rx.schedulers.Schedulers;
 public class MoviesModel implements IMoviesModel {
 
     @Override
-    public void loadMovies( String total, final IOnLoadListener iOnLoadListener) {
+    public void loadMovies( String total, final IMoviesLoadListener iMoviesLoadListener) {
         RetrofitHelper retrofitHelper= new RetrofitHelper(Api.MOVIE_HOST);
         retrofitHelper.getMovies(total)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -33,12 +28,12 @@ public class MoviesModel implements IMoviesModel {
 
                     @Override
                     public void onError(Throwable e) {
-                        iOnLoadListener.fail(e);
+                        iMoviesLoadListener.fail(e);
                     }
 
                     @Override
                     public void onNext(MoviesBean moviesBean) {
-                        iOnLoadListener.success(moviesBean);
+                        iMoviesLoadListener.success(moviesBean);
                     }
                 });
     }

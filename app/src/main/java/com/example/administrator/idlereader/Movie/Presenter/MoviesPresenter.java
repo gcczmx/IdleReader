@@ -3,7 +3,7 @@ package com.example.administrator.idlereader.Movie.Presenter;
 
 import com.example.administrator.idlereader.Bean.MoviesBean;
 import com.example.administrator.idlereader.Movie.Model.IMoviesModel;
-import com.example.administrator.idlereader.Movie.Model.IOnLoadListener;
+import com.example.administrator.idlereader.Movie.Model.IMoviesLoadListener;
 import com.example.administrator.idlereader.Movie.Model.MoviesModel;
 import com.example.administrator.idlereader.Movie.View.IMoviesView;
 
@@ -11,7 +11,7 @@ import com.example.administrator.idlereader.Movie.View.IMoviesView;
  * Created by Administrator on 2018/5/19.
  */
 
-public class MoviesPresenter implements IMoviesPresenter,IOnLoadListener {
+public class MoviesPresenter implements IMoviesPresenter,IMoviesLoadListener {
 
     private IMoviesModel iMoviesModel;
     private IMoviesView iMoviesView;

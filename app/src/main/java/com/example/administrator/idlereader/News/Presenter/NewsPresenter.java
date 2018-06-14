@@ -1,13 +1,11 @@
 package com.example.administrator.idlereader.News.Presenter;
 
 
-import android.util.Log;
-
 import com.example.administrator.idlereader.Bean.NewsBean;
 import com.example.administrator.idlereader.Http.Api;
 import com.example.administrator.idlereader.News.FgNewsFragment;
 import com.example.administrator.idlereader.News.Model.INewsModel;
-import com.example.administrator.idlereader.News.Model.IOnLoadListener;
+import com.example.administrator.idlereader.News.Model.INewsLoadListener;
 import com.example.administrator.idlereader.News.Model.NewsModel;
 import com.example.administrator.idlereader.News.View.INewsView;
 
@@ -15,7 +13,7 @@ import com.example.administrator.idlereader.News.View.INewsView;
  * Created by Administrator on 2018/5/19.
  */
 
-public class NewsPresenter implements INewsPresenter,IOnLoadListener {
+public class NewsPresenter implements INewsPresenter,INewsLoadListener {
 
     private INewsModel iNewsModel;
     private INewsView iNewsView;
@@ -54,8 +52,8 @@ public class NewsPresenter implements INewsPresenter,IOnLoadListener {
     }
 
     @Override
-    public void fail(String error) {
+    public void fail(Throwable throwable) {
         iNewsView.hideDialog();
-        iNewsView.showErrorMsg(error);
+        iNewsView.showErrorMsg(throwable);
     }
 }

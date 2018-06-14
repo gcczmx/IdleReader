@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.idlereader.Bean.NewsBean;
 import com.example.administrator.idlereader.News.Presenter.NewsPresenter;
@@ -100,8 +101,8 @@ public class FgNewsListFragment extends Fragment implements INewsView {
     }
 
     @Override
-    public void showErrorMsg(String error) {
-        tv_news_list.setVisibility(View.VISIBLE);
-        tv_news_list.setText("加载失败：" + error);
+    public void showErrorMsg(Throwable throwable) {
+        Toast.makeText(getContext(), "加载出错:"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
+
     }
 }

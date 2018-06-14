@@ -2,6 +2,9 @@ package com.example.administrator.idlereader.Http;
 
 import com.example.administrator.idlereader.Bean.MoviesBean;
 import com.example.administrator.idlereader.Bean.NewsBean;
+import com.example.administrator.idlereader.Bean.TodayBean;
+import com.example.administrator.idlereader.Bean.VideoUrlBean;
+import com.example.administrator.idlereader.Bean.WeatherBean;
 
 import java.util.concurrent.TimeUnit;
 
@@ -35,6 +38,15 @@ public class RetrofitHelper {
     }
     public Observable<MoviesBean> getMovies(String total) {
         return retrofitService.getMovie(total);
+    }
+    public Observable<TodayBean> getToday(String category){
+        return retrofitService.getToday(category);
+    }
+    public Observable<VideoUrlBean> getVideoUrl(String api){
+        return retrofitService.getVideoUrl(api);
+    }
+    public Observable<WeatherBean> getWeather(int cityKey){
+        return retrofitService.getWeather(cityKey);
     }
 
     public OkHttpClient getOkHttpClient() {

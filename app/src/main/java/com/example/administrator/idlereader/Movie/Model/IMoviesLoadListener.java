@@ -6,7 +6,7 @@ import com.example.administrator.idlereader.Bean.MoviesBean;
  * Created by Administrator on 2018/5/19.
  */
 
-public interface IOnLoadListener {
+public interface IMoviesLoadListener {
     void success(MoviesBean moviesBean);
     void fail(Throwable throwable);
 }

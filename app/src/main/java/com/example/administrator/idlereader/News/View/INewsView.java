@@ -9,6 +9,9 @@ import com.example.administrator.idlereader.Bean.NewsBean;
 
 public interface INewsView {
     void showNews(NewsBean newsBean);
+
+    void showMoreNews(NewsBean newsBean);
+
     void hideDialog();
     void showDialog();
     void showErrorMsg(Throwable throwable);

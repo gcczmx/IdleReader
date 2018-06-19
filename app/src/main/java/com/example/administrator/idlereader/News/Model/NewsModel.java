@@ -35,7 +35,12 @@ public class NewsModel implements INewsModel {
 
                     @Override
                     public void onNext(NewsBean newsBean) {
-                        iNewsLoadListener.success(newsBean);
+                        if (startPage!=0){
+                            iNewsLoadListener.loadMoreSuccess(newsBean);
+                        }else {
+                            iNewsLoadListener.success(newsBean);
+                        }
+
                     }
                 });
     }

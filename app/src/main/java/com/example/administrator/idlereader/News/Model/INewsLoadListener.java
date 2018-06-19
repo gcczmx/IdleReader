@@ -10,4 +10,6 @@ import com.example.administrator.idlereader.Bean.NewsBean;
 public interface INewsLoadListener {
     void success(NewsBean newsBean);
     void fail(Throwable throwable);
+
+    void loadMoreSuccess(NewsBean newsBean);
 }

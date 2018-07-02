@@ -4,7 +4,7 @@
 
 #### 软件效果
 
-![1](https://upload-images.jianshu.io/upload_images/11850029-25912ace540abefb.gif?imageMogr2/auto-orient/strip)
+![1](https://upload-images.jianshu.io/upload_images/11850029-25912ace540abefb.gif?imageMogr2/auto-orient/strip)![2](https://upload-images.jianshu.io/upload_images/11850029-6a3ea5fe443f1dcf.gif?imageMogr2/auto-orient/strip)![3](https://upload-images.jianshu.io/upload_images/11850029-4a373e38bb258612.gif?imageMogr2/auto-orient/strip)
 
 
 
